@@ -9,13 +9,20 @@
     <title>CRUD app</title>
 </head>
 <body>
-    <table id="users">
+  <div class="top-bar">
+    <button type="button" class="button new-btn">+ New Member</button>
+    <input type="text" id="search-input" placeholder="Search">
+  </div>
+  <table>
+    <thead>
       <tr>
-        <th>First name</th>
-        <th>Last name</th>
-        <th>Address</th>
+        <th>First name <button type="button" id="sort-first">Sort</button></th>
+        <th>Last name <button type="button" id="sort-last" >Sort</button></th>
+        <th>Address <button type="button" id="sort-address">Sort</button></th>
         <th>Action</th>
       </tr>
-    </table>
+    </thead>
+    <tbody id="users"></tbody>
+  </table>
 </body>
 </html>

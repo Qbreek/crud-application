@@ -9,23 +9,28 @@ body {
     align-items: center;
 }
 
-table {
-    border-collapse: collapse;
+.top-bar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
 }
 
-td, th {
-    text-align: center;
-    padding: 10px;
+table {
+    border-collapse: collapse;
+    max-width: 600px;
 }
 
 table, th, td {
-    border: 1px solid black;
+    border: 1px solid lightgray;
+    text-align: center;
+    padding: 10px;
 }
 
 .button {
   border: none;
   color: white;
-  padding: 15px;
+  padding: 10px;
   text-align: center;
   font-size: 16px;
   margin: 5px;
@@ -41,15 +46,19 @@ table, th, td {
   background-color: #f44336;
 }
 
+.new-btn {
+    background-color: lightblue;
+}
+
 .form-popup {
     position: fixed;
-    border: 3px solid black;
+    border: 1px solid lightgray;
     z-index: 1;
-    top: 200px;
+    top: 100px;
 }
 
 .form-container {
-    max-width: 400px;
+    min-width: 250px;
     padding: 10px;
     background-color: white;
     display: flex;

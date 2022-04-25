@@ -1,9 +1,9 @@
-import editUserHiddenPopupForm from "../editUserHiddenPopup.js";
+import editUserHiddenPopupForm from "./editUserHiddenPopup.js";
 
 //for every user create the coresponding table element
 export default function createTableElements(userInfo) {
     //create the table elements
-    const table = document.getElementById('users');
+    const tableBody = document.getElementById('users');
     const tableRow = document.createElement('tr');
     tableRow.setAttribute('id', userInfo.id);
     const firstName = document.createElement('td');
@@ -41,5 +41,5 @@ export default function createTableElements(userInfo) {
 
     tableRow.appendChild(action);
 
-    table.appendChild(tableRow);
+    tableBody.appendChild(tableRow);
 }

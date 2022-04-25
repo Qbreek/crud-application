@@ -7,8 +7,11 @@ export default function createTableElements(userInfo) {
     const tableRow = document.createElement('tr');
     tableRow.setAttribute('id', userInfo.id);
     const firstName = document.createElement('td');
+    firstName.setAttribute('id', `firstName-${userInfo.id}`);
     const lastName = document.createElement('td');
+    lastName.setAttribute('id', `lastName-${userInfo.id}`);
     const address = document.createElement('td');
+    address.setAttribute('id', `address-${userInfo.id}`);
     const action = document.createElement('td');
    
     //split userInfo.name into first and last name

@@ -22,7 +22,7 @@ export default function editUserHiddenPopupForm(userInfo) {
     addressLabel.setAttribute('for', 'address');
     addressLabel.textContent = 'Address';
 
-    //create the input elements
+    //create the text input elements
     const firstNameInput = document.createElement('input');
     firstNameInput.type = 'text';
     firstNameInput.name = 'firstname';
@@ -38,18 +38,35 @@ export default function editUserHiddenPopupForm(userInfo) {
     addressInput.name = 'address';
     addressInput.value = userInfo.address;
    
-    //create the save button
+    //create the save changes button
     const saveBtn = document.createElement('button');
+    saveBtn.setAttribute('type', 'button');
     saveBtn.classList.add('button', 'save-btn');
     saveBtn.textContent = 'Save';
     saveBtn.addEventListener('click', () => {
-        const firstName = firstNameInput.value;
-        const lastName = lastNameInput.value;
-        const address = addressInput.value;
+        //grab the correct table row using the id
+        const firstName = document.getElementById(`firstName-${userInfo.id}`);
+        const lastName = document.getElementById(`lastName-${userInfo.id}`);
+        const address = document.getElementById(`address-${userInfo.id}`);
+
+        //update the user info
+        firstName.textContent = firstNameInput.value;
+        lastName.textContent = lastNameInput.value;
+        address.textContent = addressInput.value;
+
+        //update the user object in local storage
+        userInfo.firstName = firstNameInput.value;
+        userInfo.lastName = lastNameInput.value;
+        userInfo.address = addressInput.value;
+        localStorage.setItem(userInfo.id, JSON.stringify(userInfo));
+
+        //close the popup
+        formPopup.remove();
     });
 
     //create the cancel button
     const cancelBtn = document.createElement('button');
+    cancelBtn.setAttribute('type', 'button');
     cancelBtn.classList.add('button', 'cancel-btn');
     cancelBtn.textContent = 'Cancel';
     cancelBtn.addEventListener('click', () => {

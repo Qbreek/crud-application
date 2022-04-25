@@ -1,4 +1,5 @@
 import createTableElements from "./modules/createTableElements.js";
+import getUsers from "./modules/getUsers.js";
 
 function main() {
     if (localStorage.length === 0) {

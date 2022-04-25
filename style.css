@@ -9,8 +9,8 @@ body {
     align-items: center;
 }
 
-table, th, td {
-    border: 1px solid black;
+table {
+    border-collapse: collapse;
 }
 
 td, th {
@@ -18,22 +18,26 @@ td, th {
     padding: 10px;
 }
 
+table, th, td {
+    border: 1px solid black;
+}
+
 .button {
   border: none;
   color: white;
-  padding: 15px 32px;
+  padding: 15px;
   text-align: center;
-  text-decoration: none;
   font-size: 16px;
-  margin: 4px 2px;
+  margin: 5px;
   cursor: pointer;
+  border-radius: 5px;
 }
 
-.edit-btn {
+.edit-btn, .save-btn {
   background-color: #4CAF50;
 }
 
-.delete-btn {
+.delete-btn, .cancel-btn {
   background-color: #f44336;
 }
 
@@ -45,14 +49,21 @@ td, th {
 }
 
 .form-container {
-    min-width: 400px;
+    max-width: 400px;
     padding: 10px;
     background-color: white;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    gap: 10px;
 }
 
 .form-btn-container {
     display: flex;
     justify-content: space-between;
+}
+
+input {
+    max-width: 150px;
+    padding: 10px;
 }

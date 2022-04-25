@@ -11,7 +11,7 @@ export default async function getUsers(url) {
         users.forEach(user => {
             const userObject = {
                 id: user.id,
-                firstName: user.name.split(' ')[0],
+                firstName: user.name.split(' ')[0],  //split the name into first and last name
                 lastName: user.name.split(' ')[1],
                 address: user.address.street
             };

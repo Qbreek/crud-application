@@ -69,6 +69,8 @@ export default function editUserHiddenPopupForm(userInfo) {
 
         //close the popup
         formPopup.remove();
+
+        enableBtns();
     });
 
     //create the cancel button

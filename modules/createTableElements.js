@@ -25,6 +25,7 @@ export default function createTableElements(userInfo) {
     const editBtn = document.createElement('button');
     editBtn.classList.add('button', 'edit-btn');
     editBtn.textContent = 'Edit';
+
     editBtn.addEventListener('click', () => {
        editUserHiddenPopupForm(userInfo);
        disableBtns();
@@ -34,6 +35,7 @@ export default function createTableElements(userInfo) {
     const deleteBtn = document.createElement('button');
     deleteBtn.classList.add('button', 'delete-btn');
     deleteBtn.textContent = 'Delete';
+
     deleteBtn.addEventListener('click', () => {
         tableRow.remove();
         localStorage.removeItem(userInfo.id);

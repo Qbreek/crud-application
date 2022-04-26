@@ -3,11 +3,9 @@ function sortByFirstNameAsc(users) {
     users.sort((a, b) => {
         if ( a.firstName.toLowerCase() > b.firstName.toLowerCase() ) {
             return -1;
-        }
-        if ( a.firstName.toLowerCase() < b.firstName.toLowerCase() ) {
+        } else {
             return 1;
         }
-        return 0;
     });
     
     return users;
@@ -18,11 +16,9 @@ function sortByFirstNameDesc(users) {
     users.sort((a, b) => {
         if ( a.firstName.toLowerCase() < b.firstName.toLowerCase() ) {
             return -1;
-        }
-        if ( a.firstName.toLowerCase() > b.firstName.toLowerCase() ) {
+        } else {
             return 1;
         }
-        return 0;
     });
 
     return users;
@@ -33,11 +29,9 @@ function sortByLastNameAsc(users) {
     users.sort((a, b) => {
         if ( a.lastName.toLowerCase() > b.lastName.toLowerCase() ) {
             return -1;
-        }
-        if ( a.lastName.toLowerCase() < b.lastName.toLowerCase() ) {
+        } else {
             return 1;
         }
-        return 0;
     });
 
     return users;
@@ -48,11 +42,9 @@ function sortByLastNameDesc(users) {
     users.sort((a, b) => {
         if ( a.lastName.toLowerCase() < b.lastName.toLowerCase() ) {
             return -1;
-        }
-        if ( a.lastName.toLowerCase() > b.lastName.toLowerCase() ) {
+        } else {
             return 1;
         }
-        return 0;
     });
 
     return users;
@@ -63,11 +55,9 @@ function sortByAddressAsc(users) {
     users.sort((a, b) => {
         if ( a.address.toLowerCase() > b.address.toLowerCase() ) {
             return -1;
-        }
-        if ( a.address.toLowerCase() < b.address.toLowerCase() ) {
+        } else {
             return 1;
         }
-        return 0;
     });
 
     return users;
@@ -78,11 +68,9 @@ function sortByAddressDesc(users) {
     users.sort((a, b) => {
         if ( a.address.toLowerCase() < b.address.toLowerCase() ) {
             return -1;
-        }
-        if ( a.address.toLowerCase() > b.address.toLowerCase() ) {
+        } else {
             return 1;
         }
-        return 0;
     });
 
     return users;

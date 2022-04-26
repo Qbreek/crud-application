@@ -1,2 +1,3 @@
-# crud-application
-CRUD application part of the Foundation lessons
+# CRUD application
+Final exercise.
+Using GitHub because I encountered some problems with CodeSandbox.

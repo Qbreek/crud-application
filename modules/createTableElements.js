@@ -1,4 +1,5 @@
-import editUserHiddenPopupForm from "./editUserHiddenPopup.js";
+import editUserHiddenPopupForm from "./editUserHiddenPopupForm.js";
+import {enableBtns, disableBtns} from "./enableDisableBtn.js";
 
 //for every user create the coresponding table element
 export default function createTableElements(userInfo) {
@@ -26,6 +27,7 @@ export default function createTableElements(userInfo) {
     editBtn.textContent = 'Edit';
     editBtn.addEventListener('click', () => {
        editUserHiddenPopupForm(userInfo);
+       disableBtns();
     });
     
     //delete button
@@ -41,5 +43,6 @@ export default function createTableElements(userInfo) {
 
     tableRow.appendChild(action);
 
-    tableBody.appendChild(tableRow);
+    tableBody.prepend(tableRow);
 }
+

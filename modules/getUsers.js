@@ -11,13 +11,14 @@ export default async function getUsers(url) {
         users.forEach(user => {
             const userObject = {
                 id: user.id,
-                firstName: user.name.split(' ')[0],  //split the name into first and last name
+                firstName: user.name.split(' ')[0],  
                 lastName: user.name.split(' ')[1],
                 address: user.address.street
             };
             localStorage.setItem(user.id, JSON.stringify(userObject));
             createTableElements(userObject);
         });
+
     } catch(error) {
         console.error(`Could not get users: ${error}`);
     }

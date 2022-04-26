@@ -1,3 +1,5 @@
+import { enableBtns } from "./enableDisableBtn.js";
+
 //function that creates the hidden popup form for editing the user
 export default function editUserHiddenPopupForm(userInfo) {
     const formPopup = document.createElement('div');
@@ -8,6 +10,11 @@ export default function editUserHiddenPopupForm(userInfo) {
 
     const formButtonContainer = document.createElement('div');
     formButtonContainer.classList.add('form-button-container');
+
+    //create the form title
+    const formLegend = document.createElement('legend');
+    const formTitle = document.createElement('h2');
+    formTitle.textContent = 'Edit Member';
 
     //create the label elements
     const firstNameLabel = document.createElement('label');
@@ -40,7 +47,7 @@ export default function editUserHiddenPopupForm(userInfo) {
    
     //create the save changes button
     const saveBtn = document.createElement('button');
-    saveBtn.setAttribute('type', 'button');
+    saveBtn.type = 'button';
     saveBtn.classList.add('button', 'save-btn');
     saveBtn.textContent = 'Save';
     saveBtn.addEventListener('click', () => {
@@ -66,15 +73,18 @@ export default function editUserHiddenPopupForm(userInfo) {
 
     //create the cancel button
     const cancelBtn = document.createElement('button');
-    cancelBtn.setAttribute('type', 'button');
+    cancelBtn.type = 'button';
     cancelBtn.classList.add('button', 'cancel-btn');
     cancelBtn.textContent = 'Cancel';
     cancelBtn.addEventListener('click', () => {
         formPopup.remove();
+        enableBtns();
+
     });
 
     formButtonContainer.append(saveBtn, cancelBtn);
-    formContainer.append(firstNameLabel, firstNameInput, lastNameLabel, lastNameInput, addressLabel, addressInput, formButtonContainer);
+    formLegend.appendChild(formTitle);
+    formContainer.append(formLegend, firstNameLabel, firstNameInput, lastNameLabel, lastNameInput, addressLabel, addressInput, formButtonContainer);
     formPopup.appendChild(formContainer);
     document.body.appendChild(formPopup);
 }
